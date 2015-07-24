@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-project( NormalizeGradientVectors )
+project( NormalizeDWIGradientVectors )
 
 if(NOT SETIFEMPTY)
   macro(SETIFEMPTY)
@@ -17,8 +17,8 @@ SETIFEMPTY(INSTALL_RUNTIME_DESTINATION bin)
 find_package( ITK REQUIRED )
 include( ${ITK_USE_FILE} )
 
-add_executable( NormalizeGradientVectors NormalizeGradientVectors.cxx )
+add_executable( NormalizeDWIGradientVectors NormalizeDWIGradientVectors.cxx )
 
-target_link_libraries( NormalizeGradientVectors ${ITK_LIBRARIES} )
+target_link_libraries( NormalizeDWIGradientVectors ${ITK_LIBRARIES} )
 
-install( TARGETS NormalizeGradientVectors RUNTIME DESTINATION ${INSTALL_RUNTIME_DESTINATION} )
+install( TARGETS NormalizeDWIGradientVectors RUNTIME DESTINATION ${INSTALL_RUNTIME_DESTINATION} )
