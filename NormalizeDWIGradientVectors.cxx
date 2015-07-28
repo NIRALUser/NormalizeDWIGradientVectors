@@ -5,6 +5,8 @@
 #include <itkMatrix.h>
 #include <itkMetaDataObject.h>
 
+#define NORMALIZEDWIGRADIENTVECTORS_VERSION "1.0.0"
+
 //To check the image voxel type
 void GetImageType( const char* fileName ,
                    itk::ImageIOBase::IOPixelType &pixelType ,
@@ -153,9 +155,15 @@ template< class PixelType > int Normalize( char* input , char* output )
 
 int main( int argc , char* argv[] )
 {
+   if( argc == 2 && !strcmp(argv[ 1 ],"--version") )
+   {
+     std::cout << "NormalizeDWIGradientVectors version: " << NORMALIZEDWIGRADIENTVECTORS_VERSION << std::endl ;
+     return 0 ;
+   }
    if( argc != 3 )
    {
       std::cerr << argv[ 0 ] << " inputDWI outputDWI" << std::endl ;
+      std::cerr << argv[ 0 ] << " --version -> Prints version " << std::endl ;
       return 1 ;
    }
    itk::ImageIOBase::IOPixelType pixelType ;
