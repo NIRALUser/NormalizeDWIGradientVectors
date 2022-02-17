@@ -35,9 +35,9 @@ if(NOT SETIFEMPTY)
     set(VALUE ${ARGV1})
     if(NOT ${KEY})
       set(${KEY} ${VALUE})
-    endif(NOT ${KEY})
-  endmacro(SETIFEMPTY KEY VALUE)
-endif(NOT SETIFEMPTY)
+    endif()
+  endmacro()
+endif()
 
 SETIFEMPTY(INSTALL_RUNTIME_DESTINATION bin)
 
