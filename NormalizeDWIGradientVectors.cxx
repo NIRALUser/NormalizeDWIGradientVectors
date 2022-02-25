@@ -1,7 +1,7 @@
 #include <itkImageFileReader.h>
 #include <itkImageFileWriter.h>
 #include <itkVectorImage.h>
-#include <string.h>
+#include <cstring>
 #include <itkMatrix.h>
 #include <itkMetaDataObject.h>
 
